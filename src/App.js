@@ -21,7 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/" exact element={<Carts />} />
         <Route
-          path="orders"
+          path="/orders"
           exact
           element={
             <Suspense fallback={<div>Loading....</div>}>
