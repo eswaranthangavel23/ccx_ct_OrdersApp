@@ -2,20 +2,22 @@ import fetch from "node-fetch";
 import { ClientBuilder } from "@commercetools/sdk-client-v2";
 import { createApiBuilderFromCtpClient } from "@commercetools/platform-sdk";
 
-export const projectKey = process.env.REACT_APP_CTP_PROJECT_KEY;
+export const projectKey = "hermanmiller_dev_demo";
 const authMiddlewareOptions = {
-  host: process.env.REACT_APP_CTP_AUTH_URL,
+  host: "https://auth.us-central1.gcp.commercetools.com",
   projectKey,
   credentials: {
-    clientId: process.env.REACT_APP_CTP_CLIENT_ID,
-    clientSecret: process.env.REACT_APP_CTP_CLIENT_SECRET,
+    clientId: "XjjA-HcYMNfDYeZSL98z7li-",
+    clientSecret: "DkPCvCp0Rs5xvtcK-WOYFjxLwolXBhHz",
   },
-  scopes: [process.env.REACT_APP_CTP_SCOPES],
+  scopes: [
+    "manage_orders:hermanmiller_dev_demo view_customers:hermanmiller_dev_demo view_published_products:hermanmiller_dev_demo create_anonymous_token:hermanmiller_dev_demo manage_my_orders:hermanmiller_dev_demo",
+  ],
   fetch,
 };
 
 const httpMiddlewareOptions = {
-  host: process.env.REACT_APP_CTP_API_URL,
+  host: "https://api.us-central1.gcp.commercetools.com",
   fetch,
 };
 
