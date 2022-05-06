@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Link, Route } from "react-router-dom";
 import Carts from "./pages/carts";
 import "./App.css";
 const Orders = lazy(() => import(`./pages/orders`));
@@ -10,17 +10,20 @@ const App = () => {
       <div className="nav_bar">
         <p>hermanmiller_dev_demo</p>
         <div className="nb_items">
-          <a href="/carts" className="nb_items_link">
+          <Link className="nb_items_link" to="/">
             Carts
-          </a>
-          <a href="/orders" className="nb_items_link">
+          </Link>
+          {/* <a href="/" className="nb_items_link">
+            Carts
+          </a> */}
+          <Link className="nb_items_link" to="/orders">
             Orders
-          </a>
+          </Link>
         </div>
       </div>
+
       <Routes>
         <Route path="/" exact element={<Carts />} />
-        <Route path="/carts" exact element={<Carts />} />
         <Route
           path="orders"
           exact
