@@ -10,7 +10,7 @@ const App = () => {
       <div className="nav_bar">
         <p>hermanmiller_dev_demo</p>
         <div className="nb_items">
-          <a href="/" className="nb_items_link">
+          <a href="/carts" className="nb_items_link">
             Carts
           </a>
           <a href="/orders" className="nb_items_link">
@@ -20,8 +20,9 @@ const App = () => {
       </div>
       <Routes>
         <Route path="/" exact element={<Carts />} />
+        <Route path="/carts" exact element={<Carts />} />
         <Route
-          path="/orders"
+          path="orders"
           exact
           element={
             <Suspense fallback={<div>Loading....</div>}>
